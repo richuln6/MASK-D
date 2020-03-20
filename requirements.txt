@@ -1,0 +1,13 @@
+pandas
+ipwhois
+numpy
+geoip2
+pandas
+sqlalchemy
+sklearn
+pymysql
+pyod
+scipy
+matplotlib
+openpyxl
+pickle-mixin

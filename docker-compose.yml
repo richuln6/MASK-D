@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  mariadb:
+  
+    image: mariadb
+    container_name: rp
+    environment:
+    - MYSQL_USER=richul
+    - MYSQL_PASSWORD=richul123
+    - MYSQL_DATABASE=emss
+    ports:
+    - 8808:3306
+
