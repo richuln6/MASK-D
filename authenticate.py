@@ -15,7 +15,6 @@ from scipy import stats
 from sqlalchemy import create_engine
 
 
-df_en_all=pd.read_pickle('LogFileDfs/LogDumpEncoded')
 
 
 def reduce(df):
@@ -29,17 +28,20 @@ def reduce(df):
     X1 = pdf['pc 1'].values.reshape(-1,1)
     X2 = pdf['pc 2'].values.reshape(-1,1)
     X = np.concatenate((X1,X2),axis=1)
-    return X
+    print(type(X))
+    return pd.DataFrame(X)
 
 def pyodtry(name):
     dfwhole = pd.read_pickle('LogFileDfs/LogDumpEncoded')
+    print(dfwhole)
     df=pd.read_pickle(name)
     X1=reduce(dfwhole)
-    X2=reduce(df)
+    #X2=X1[-len(X1):]
+    X2=X1.iloc[-len(df):]
     ddf = pd.read_pickle('LogFileDfs/original')
 
     random_state = np.random.RandomState(42)
-    outliers_fraction = 0.005
+    outliers_fraction = 0.03
     clf = KNN(method='mean',contamination=outliers_fraction)
     xx , yy  = np.meshgrid(np.linspace(0,1 , 200), np.linspace(0, 1, 200))
     
@@ -58,8 +60,10 @@ def pyodtry(name):
     #engine = create_engine("mysql+pymysql://{user}:{pw}@172.17.0.3/{db}".format(user="richul",pw="richul123",db="emss"))
     # Insert whole DataFrame into  MySQL
     #output.to_sql('output', con = engine, if_exists = 'replace', chunksize = 1000)
-    with pd.ExcelWriter('/home/richul/Documents/EnhancingMailServerSecurity/Output/output.xlsx') as writer:
+    with pd.ExcelWriter('Output/output.xlsx') as writer:
         output.to_excel(writer, sheet_name='output')
+    with pd.ExcelWriter('Output/full.xlsx') as writer:
+        dfwhole.to_excel(writer, sheet_name='output')
 import sys
 name=sys.argv[1]
 

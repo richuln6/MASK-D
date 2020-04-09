@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>M A S K - D</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %} " >
+  <!-- Material Design Bootstrap -->
+  
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" >
+  <!-- Your custom styles (optional) -->
+  
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}" >
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 100%;
+    }
+.avatar-pic {
+width: 150px;
+}
+div .top{
+background-image: url(" {% static "Maskd_Transparent.png" %} "); 
+background-size:50% 50%;
+ background-repeat:no-repeat;
+ background-position:bottom;
+}
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .view {
+        height: 1050px;
+      }
+    }
+hr{
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 20%;
+    border: 0;
+    border-style:none;
+    border-top-style:dotted;
+    border-width:10px;
+    height: 1px;
+    border-color: #FFB302;
+}
+
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .view {
+
+        height: 700px;
+      }
+    }
+    .h3 , h6{
+color:#FFA600;
+}
+p{
+color:#ffffff;
+}
+  .page-footer{
+  background: linear-gradient(to top, #333300 0%, #01100f 91%);
+ }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+
+        background: #333300 !important;
+      }
+
+}
+#about{
+width:100%;
+}
+table{
+background-color:#ffffff00;
+}
+#a{
+box-shadow: 2px 2px 14px #000000;
+}
+#a:hover{
+box-shadow: 2px 2px 14px rgba(255,179, 2, 10);
+}
+.shield{
+height:300px;
+  }
+  </style>
+}
+}
+<script>
+$('.file-upload').file_upload();
+</script>
+</head>
+
+<body style="background-color:#01100f;">
+
+  <header >
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" >
+      <div class="container">
+
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="./"  style="color:#FFC500">
+          <strong>M A S K - D</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="./" style="color:#FFC500">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about_us/"  style="color:#FFC500">About MASK-D</a>
+            </li>
+          </ul>
+          {% load static %}
+
+          <img class="nav-item" src="{% static 'Maskd_Transparent.png' %}"alt="" style="width:130px;position:center;position: absolute;
+          left: 50%; margin-left: -65px !important;  /* 50% of your logo width */ display: block;"/>
+
+          <!-- Right -->
+         <ul class="navbar-nav mr-right">
+            <li class="nav-item">
+<button class="nav-link btn btn-outline-yellow" type="submit" id="MaterialButton-addon2" onclick="location.href='{% url 'upload' %}'">Try Online
+              <i class="far fa-image ml-1"></i>
+            </button>
+                     </li>
+            <li class="nav-item">
+              <a target="_blank" href="{% static 'MASK_D.tar.xz' %}" class="nav-link btn btn-outline-yellow" style="color:#FFC500">Download
+                <i class="fas fa-download ml-2"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Full Page Intro -->
+    <div class="view full-page-intro" style=" margin-top:-25px;">
+
+      <!--Video source-->
+      <video class="video-intro" autoplay loop muted>
+        <source src="{% static "ICON_VERSION8.mp4" %}" type="video/mp4" />
+      </video>
+
+      <!-- Mask & flexbox options-->
+      {% load static %}
+      <div class="top mask rgba-blue-light d-flex justify-content-center align-items-center">
+
+      </div>
+      <!-- Mask & flexbox options-->
+
+    </div>
+    <!-- Full Page Intro -->
+
+  </header>
+
+  <!--Main layout-->
+ 
+<br/>
+    <div class="container" id="a" style="height:auto;font-size:auto;background-color:#01100F;" >
+<br/>
+
+      <!--Section: Main info-->
+      <section class="mt-5 wow fadeIn" >
+
+        <!--Grid row-->
+        <div class="row" >
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4" style="text-align: center;">
+
+            <img src="{%static '/shield.png' %}" class="img-fluid shield" 
+              alt="">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <!-- Main heading -->
+            <h3 class="h3 mb-3">Enhancing Mail Server Security Using Maichine Learning</h3>
+            <p>This is an algorithm that helps you secure your mail server from potential mallicious users using 
+              <strong>Machine Learning</strong> tools.</p>
+            <h6><strong>How MASK-D Works . . . </strong></h6>
+            <!-- Main heading -->
+
+            
+            <p>
+             Input you mail server logs to the algorithm and track the anomalies in them.</br>Identify any unusual user behavious in any of the users and secure your server immediately.</br></br>
+              
+              <strong>Try Today! Free and Open-Source Tool.</strong>
+            </p>
+
+            <!-- CTA -->
+            <a target="_blank" href="{% static 'MASK_D.tar.xz' %}" class="btn btn-amber btn-md" style="background: #FFA600">Download
+              <i class="fas fa-download ml-1"></i> 
+            </a>
+            <button class="btn btn-amber btn-md btn-secondary m-0 px-3" type="submit" id="MaterialButton-addon2" onclick="location.href='{% url 'upload' %}'">Try Online
+              <i class="far fa-image ml-1"></i>
+            </button>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+      </section>
+      <!--Section: Main info-->
+      <!--Section: Main features & Quick Start-->
+      </div>
+  
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!--Call to action-->
+    <div class="pt-4">
+      <a class="btn btn-outline-white" href="{% static 'MASK_D.tar.xz' %}" target="_blank"
+        role="button">Download MDB
+        <i class="fas fa-download ml-2"></i>
+      </a>
+      <a class="btn btn-outline-white" href="/upload" role="button">Try Online
+        <i class="fas fa-graduation-cap ml-2"></i>
+      </a>
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2020 Copyright:
+     M A S K - D <br/>Created By- Richul N Prasad, Swati S Maddur, P Jyothi Priya, Sainath Reddy
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>

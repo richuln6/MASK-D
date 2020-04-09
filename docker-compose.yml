@@ -1,14 +1,10 @@
 version: '3.4'
 
 services:
-  mariadb:
-  
-    image: mariadb
-    container_name: rp
-    environment:
-    - MYSQL_USER=richul
-    - MYSQL_PASSWORD=richul123
-    - MYSQL_DATABASE=emss
-    ports:
-    - 8808:3306
+  mask-d:
+    build: ./
+    command: python3 ./encode.py "LogFile/failed-login.log"
+    command: python3 ./authenticate.py "LogFileDfs/encoded"
+    volumes:
+      - ./:/home/richul/Documents/EnhancingMailServerSecurity/Output/
 

@@ -97,7 +97,7 @@ dff['isp']=x
 dff['distance']=y
 dff.to_pickle('LogFileDfs/original')
 dfall=pd.read_pickle('LogFileDfs/LogDumpdf')
-dfall=dfall.append(dff)
+dfall=dfall.append(dff,ignore_index=True)
 dfall.to_pickle('LogFileDfs/LogDumpdf')
 #preprocessing 
 
@@ -115,7 +115,7 @@ lerip.fit(rips)
 lelip.fit(lips)
 leisp.fit(isps)
 leuser.fit(users)
-dff1=dff
+dff1=dff.copy()
 dff1['rip']=lerip.transform(dff1['rip'])
 dff1['lip']=lelip.transform(dff1['lip'])
 dff1['user']=leuser.transform(dff1['user'])
@@ -138,15 +138,15 @@ dff2 = pd.DataFrame(dff1, columns = ['user','rip', 'lip','date_time','isp','dist
 #dff2.to_sql('encoded', con = engine, if_exists = 'replace', chunksize = 1000)
 #dff1.to_sql('original', con = engine, if_exists = 'replace', chunksize = 1000)
 df_en_all=pd.read_pickle('LogFileDfs/LogDumpEncoded')
-df_en_all=df_en_all.append(dff2)
+df_en_all=df_en_all.append(dff2,ignore_index=True)
 df_en_all.to_pickle('LogFileDfs/LogDumpEncoded')
-with pd.ExcelWriter('/home/richul/Documents/EnhancingMailServerSecurity/Output/Encoding.xlsx') as writer:
+with pd.ExcelWriter('Output/Encoding.xlsx') as writer:
     dff1.to_excel(writer, sheet_name='original')
     dff2.to_excel(writer, sheet_name='encoded')
- 
+    df_en_all.to_excel(writer, sheet_name='all')
 def call_me():
     print(dff2)
-    dff2.to_pickle('/home/richul/Documents/EnhancingMailServerSecurity/LogFileDfs/encoded')
+    dff2.to_pickle('LogFileDfs/encoded')
 call_me()
         
 

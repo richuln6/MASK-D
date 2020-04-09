@@ -1,0 +1,28 @@
+<html>
+<body>
+<button onclick="location.href='{% url 'script' %}'">Execute Script</button>
+            <table border="1px">
+
+	<tr>
+		{% for d in data%}
+
+			<th>{{ d }}</th>
+		{% endfor %}
+ 
+		{% for i,row in data.iterrows %}
+			<tr>
+				
+					{% for j,col in row.iteritems%}
+
+					<td>{{ col }}</td>
+				{% endfor %}
+
+			</tr>
+	{% endfor %}
+</tr>
+	
+
+	
+</table>
+</body>
+</html>
